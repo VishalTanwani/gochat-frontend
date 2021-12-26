@@ -33,7 +33,7 @@ function Login(props) {
             <div className="login-container">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="whatsapplogo"/>
                 <div className="login-text">
-                    <h1>Sign in to WhatsApp</h1>
+                    <h1>Sign in to Gochat</h1>
                 </div>
                 <div className="login-form">
                     <form onSubmit={handleClick}>
