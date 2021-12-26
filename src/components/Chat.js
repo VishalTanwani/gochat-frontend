@@ -157,7 +157,7 @@ const Chat = () => {
   let userAgent = window.navigator.userAgent.toLocaleLowerCase();
 
   return (
-    <div className={groupDescStatus ? "chat1" : "chat"} style={{ height: userAgent.indexOf("android") === -1? "95vh": ""}}>
+    <div className={groupDescStatus ? "chat1" : "chat"} style={{ height: "100vh"}}>
       {currentRoom && (
         <header className="chatHeader" >
           <div className="chat-header-unselect-room">
