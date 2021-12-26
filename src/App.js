@@ -10,6 +10,7 @@ import ImageViewer from "./components/ImageViewer";
 
 function App() {
   socketFunctions.initialize()
+  console.log(process.env)
   return (
     <div className="App">
       <div className="app-container">
