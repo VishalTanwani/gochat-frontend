@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Gochat",
+  "name": "Gochat is built in golang and react",
   "icons": [
     {
       "src": "favicon.ico",
