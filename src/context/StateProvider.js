@@ -326,6 +326,7 @@ export const StateProvider = ({ children }) => {
             type: actionTypes.SET_STORY,
             payload: response.data,
           });
+          window.location.href = "/whatsapp"
         })
         .catch(function (error) {
           console.log(error);
@@ -335,7 +336,6 @@ export const StateProvider = ({ children }) => {
             message: "Network error",
           });
         });
-        window.location.href = "/whatsapp"
 
     },
     getStory: () => {
