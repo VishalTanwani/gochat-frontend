@@ -17,16 +17,17 @@ function Login(props) {
     }, [props])
     const handleClick = async (e) => {
         e.preventDefault();
-      if (email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ) {
-        if (code === "") {
-            unifiedRegister(email.trim())
-            setCodeShow(true)
+        setError(false)
+        if (email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ) {
+            if (code === "") {
+                unifiedRegister(email.trim())
+                setCodeShow(true)
+            } else {
+                unifiedRegister(email.trim(),code) 
+            }
         } else {
-            unifiedRegister(email.trim(),code) 
+            setError(true)
         }
-      } else {
-        setError(true)
-      }
     }
     return (
         <div className="login">
