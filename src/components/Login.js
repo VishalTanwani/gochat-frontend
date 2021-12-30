@@ -19,10 +19,10 @@ function Login(props) {
         e.preventDefault();
       if (email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ) {
         if (code === "") {
-            unifiedRegister(email)
+            unifiedRegister(email.trim())
             setCodeShow(true)
         } else {
-            unifiedRegister(email,code) 
+            unifiedRegister(email.trim(),code) 
         }
       } else {
         setError(true)
