@@ -121,14 +121,14 @@ function Conversation(props) {
           />
           <div className="roomInfo">
             <h1>{data.name}</h1>
-            <p style={{display:(lastMessage && lastMessage.image)?"flex":"block"}}>{lastMessage && (lastMessage.image 
+            {lastMessage && lastMessage.room_id === data._id &&<p style={{display:(lastMessage && lastMessage.image)?"flex":"block"}}>{lastMessage && (lastMessage.image 
               ? <><PhotoCameraIcon/> Photo</> 
               : lastMessage.body!=="" && aes256.decrypt(data._id,lastMessage.body).includes("<check>") 
                 ? lastMessage.user_id === user._id 
                   ? "You "+aes256.decrypt(data._id,lastMessage.body).split("<check>")[1]
                   : aes256.decrypt(data._id,lastMessage.body).split("<check>")[0]+aes256.decrypt(data._id,lastMessage.body).split("<check>")[1] 
                 : aes256.decrypt(data._id,lastMessage.body))}
-            </p>
+            </p>}
           </div>
         </div>
         {type === "search" && (!data.users || !data.users.includes(user.email)) && <p className="conversation-join">Join</p>}

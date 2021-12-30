@@ -20,10 +20,10 @@ function Login(props) {
         setError(false)
         if (email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ) {
             if (code === "") {
-                unifiedRegister(email.trim())
+                unifiedRegister(email)
                 setCodeShow(true)
             } else {
-                unifiedRegister(email.trim(),code) 
+                unifiedRegister(email,code) 
             }
         } else {
             setError(true)
@@ -39,7 +39,7 @@ function Login(props) {
                 <div className="login-form">
                     <form onSubmit={handleClick}>
                         {!codeShow 
-                        ? <input type="text" placeholder="Email" autoFocus value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        ? <input type="text" placeholder="Email" autoFocus value={email} onChange={(e) => setEmail(e.target.value.trim())}/>
                         : <input type="number" placeholder="Code" autoFocus value={code} onChange={(e) => setCode(e.target.value)}/>}
                         <button type="submit">
                             login
